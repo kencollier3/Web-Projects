@@ -10,8 +10,9 @@ app.get('/', (req, res) => {
     res.send('<h1>This is the homepage!</h1>');
 })
 
-app.get('/r/:subreddit', (req, res) => {
-    res.send('this is a subreddit!');
+app.get('/r/:subreddit/:postId', (req, res) => {
+    const { subreddit, postId } = req.params;
+    res.send(`<h1>Viewing Post ID: ${postId} on the ${subreddit} subreddit. </h1>`)
 })
 
 app.get('/cats', (req, res) => {
